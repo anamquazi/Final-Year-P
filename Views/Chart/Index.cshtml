@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Perfomans.Models.Departments>
+@{
+    ViewData["Title"] = "Departments structure -";
+}
+
+<body>
+    <div style="margin-top: 2em;" class="centered ui cards">
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <div class="content">
+                    <div class="ui placeholder">
+                        <h2 class="ui centered header">
+                            @item.Name
+                        </h2>
+                        
+                        @foreach (User u in ViewBag.AllUsers)
+                        {
+                            if ((u.DepartmentId == item.Id) & (u.RoleId == 4))
+                            {
+                                <h3 class="ui center aligned sub header">Department head : @u.Name</h3>
+                            }
+                        }
+                    </div>
+
+                    <br />
+              
+                    <div class="ui placeholder">
+                        
+                        @foreach (User u in ViewBag.AllUsers)
+                        {
+                            if ((u.DepartmentId == item.Id) & (u.RoleId == 3))
+                            {
+                                <h4 class="ui center aligned sub header">Team Lead : @u.Name</h4>
+                            }
+                        }
+                    </div>
+
+                    <br />
+                   
+                    <div class="ui placeholder">
+                        
+                        @foreach (User u in ViewBag.AllUsers)
+                        {
+                            if ((u.DepartmentId == item.Id) & (u.RoleId == 2))
+                            {
+                                <h5 class="ui center aligned sub header">Users : @u.Name</h5>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    
+    </div>
+</body>
+                
