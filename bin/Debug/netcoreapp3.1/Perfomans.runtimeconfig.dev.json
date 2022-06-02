@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\AnamQ\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\AnamQ\\.nuget\\packages"
+    ]
+  }
+}
